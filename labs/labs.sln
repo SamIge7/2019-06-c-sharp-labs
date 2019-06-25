@@ -7,9 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_01", "labs_01\labs_01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_02", "labs_02\labs_02.csproj", "{29E8A5D9-2521-41EA-8EFD-F626FB1E8F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_03_old_forms_app", "lab_03_old_forms_app\lab_03_old_forms_app.csproj", "{FDCBBB53-664A-49C8-B6BC-772C21E274E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_03_old_forms_app", "lab_03_old_forms_app\labs_03_old_forms_app.csproj", "{FDCBBB53-664A-49C8-B6BC-772C21E274E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_04_WPF_starter", "lab_04_WPF_starter\lab_04_WPF_starter.csproj", "{F7246C93-64FF-471E-AE64-7DCFA7FE93EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_04_WPF_starter", "lab_04_WPF_starter\labs_04_WPF_starter.csproj", "{F7246C93-64FF-471E-AE64-7DCFA7FE93EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_05_asp_core_demo", "labs_05_asp_core_demo\labs_05_asp_core_demo.csproj", "{9830CB28-CB2B-4F51-A137-FC24C4A475D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_05b_asp_core_demo", "labs_05b_asp_core_demo\labs_05b_asp_core_demo.csproj", "{3BD2FA6B-E106-4547-9025-BD7D7BD01D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_06_asp_forms_site_older", "labs_06_asp_frame_site_older\labs_06_asp_forms_site_older.csproj", "{18E124C8-47DB-48EC-AC90-619B2AEACB91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_07_entity_demo", "labs_07_entity_demo\labs_07_entity_demo.csproj", "{934C935A-F156-4CF7-91DB-B03DF5569FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_08_wpf_database_demo", "labs_08_wpf_database_demo\labs_08_wpf_database_demo.csproj", "{5B30C2B8-4E85-408F-86A7-8B7B493BDBBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +43,26 @@ Global
 		{F7246C93-64FF-471E-AE64-7DCFA7FE93EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7246C93-64FF-471E-AE64-7DCFA7FE93EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7246C93-64FF-471E-AE64-7DCFA7FE93EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9830CB28-CB2B-4F51-A137-FC24C4A475D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9830CB28-CB2B-4F51-A137-FC24C4A475D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9830CB28-CB2B-4F51-A137-FC24C4A475D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9830CB28-CB2B-4F51-A137-FC24C4A475D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD2FA6B-E106-4547-9025-BD7D7BD01D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD2FA6B-E106-4547-9025-BD7D7BD01D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD2FA6B-E106-4547-9025-BD7D7BD01D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD2FA6B-E106-4547-9025-BD7D7BD01D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E124C8-47DB-48EC-AC90-619B2AEACB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E124C8-47DB-48EC-AC90-619B2AEACB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E124C8-47DB-48EC-AC90-619B2AEACB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E124C8-47DB-48EC-AC90-619B2AEACB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{934C935A-F156-4CF7-91DB-B03DF5569FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{934C935A-F156-4CF7-91DB-B03DF5569FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{934C935A-F156-4CF7-91DB-B03DF5569FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{934C935A-F156-4CF7-91DB-B03DF5569FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B30C2B8-4E85-408F-86A7-8B7B493BDBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B30C2B8-4E85-408F-86A7-8B7B493BDBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B30C2B8-4E85-408F-86A7-8B7B493BDBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B30C2B8-4E85-408F-86A7-8B7B493BDBBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

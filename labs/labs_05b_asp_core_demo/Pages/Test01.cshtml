@@ -1,0 +1,17 @@
+﻿@page
+@model labs_05b_asp_core_demo.Pages.Test01Model
+@{
+    ViewData["Title"] = "Test01";
+}
+
+<h2>Test01</h2>
+
+<ul>
+    @for (var i = 0; i <= 10; i++)
+    {
+        <li>The number is @i</li>
+    }
+</ul>
+
+<h2> We are displaying @Model.DisplayItem</h2>
+
