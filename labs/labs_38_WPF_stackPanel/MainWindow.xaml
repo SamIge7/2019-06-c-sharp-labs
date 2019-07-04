@@ -1,0 +1,69 @@
+﻿<Window x:Class="labs_38_WPF_stackPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:labs_38_WPF_stackPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="Auto" Width="Auto" Background="#9c64f5" FontSize="30">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="Button01" Background="#0530f2" Click="ShowPanel01" Grid.Row="0" Grid.Column="0" Content="Panel 1" />
+        <Button x:Name="Button02" Background="#0530f2" Click="ShowPanel02" Grid.Row="0" Grid.Column="1" Content="Panel 2" />
+        <Button x:Name="Button03" Background="#0530f2" Click="ShowPanel03" Grid.Row="0" Grid.Column="2" Content="Panel 3" />
+        <StackPanel x:Name="StackPanel01" Background="#11f0dd" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
+        <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="Label01" Content="Panel 01" Grid.Row="0" Grid.Column="0" />
+            </Grid>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel02" Background="#11f0dd" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="Label02" Content="Panel 02" Grid.Row="0" Grid.Column="1" />
+            </Grid>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel03" Background="#11f0dd" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="Label03" Content="Panel 03" Grid.Row="0" Grid.Column="2" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
