@@ -1,8 +1,9 @@
 using NUnit.Framework;
 using labs_22_first_test;
 using Tests;
+using labs_48_snaplab_loops;
 using static Tests.Eng35Tests;
-
+using static labs_48_snaplab_loops.Program;
 namespace Tests
 {
     public class NUnitTests
@@ -46,7 +47,7 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, -1)]
+        [TestCase(new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, 185)]
         public void Mega_Multiple_Coding_Loop(int[] array, int expected)
         {
             //arrange
@@ -92,6 +93,13 @@ namespace Tests
         public void ArrayQueueStackTest (int[] array, int expected)
         {
             var actual = Eng35Tests.Array_Loop_Queue_Stack(array);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 5,6,7,8,9}, 35840)]
+        public void ArrayLoopsTest (int[] array, int expected)
+        {
+            var actual = Program.Loops(array);
             Assert.AreEqual(expected, actual);
         }
     }

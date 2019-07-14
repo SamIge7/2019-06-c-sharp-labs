@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace labs_33_struct
 {
     class Program

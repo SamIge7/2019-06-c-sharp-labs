@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:labs_24_gaming_interface"
         mc:Ignorable="d"
-        Title="SecondWindow" Height="450" Width="800">
+        Title="Q1Window" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -22,9 +24,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="C:\2019-06-c-sharp-labs\labs\labs_24_gaming_interface\images.jfif" />
         </Grid.Background>
-        <Label x:Name="QuestionLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Opacity="0.3" />
-        <ListBox x:Name="ResultBox" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Opacity="0.3" />
-        <TextBox x:Name="AnswerBox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Opacity="0.3"/>
-        <Button x:Name="SubmitAnswer" Grid.Column="0" Grid.Row="2" Opacity="0.3" Content="Submit Answer" FontSize="20" FontWeight="Bold" Click="SubmitAnswer_Click"/>
+        <TextBox x:Name="QuestionLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Opacity="0.3" HorizontalContentAlignment="Center" FontSize="25" />
+        <TextBox x:Name="ResultBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Opacity="0.3" />
+        <TextBox x:Name="AnswerBox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Opacity="0.3"/>
+        <TextBox x:Name="ScoreBox" Grid.Row="2" Grid.Column="4" Opacity="0.3" />
+        <Button x:Name="SubmitAnswer" Grid.Column="0" Grid.Row="3" Opacity="0.3" Content="Submit Answer" FontSize="20" FontWeight="Bold" Click="SubmitAnswer_Click"/>
+        <Button x:Name="ClickQuestion" Grid.Column="2" Grid.Row="3" Opacity="0.3" Content="Click for Question" FontSize="20" FontWeight="Bold" Click="Question_Click"/>
+        <Button x:Name="Next" Grid.Column="4" Grid.Row="3" Opacity="0.3" Content="Next Question" FontSize="20" FontWeight="Bold" Click="Next_Click"/>
+        <TextBox x:Name="Question" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Opacity="0.3"  />
     </Grid>
 </Window>

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 namespace labs_34_lists
+
 {
     class Program
     {
         static List<int> list01 = new List<int>();
         static List<string> list02 = new List<string>();
         static List<int> list03 = new List<int>();
+        static List<int> list04 = new List<int>();
 
         static void Main(string[] args)
         {
@@ -165,6 +168,42 @@ namespace labs_34_lists
             Console.WriteLine(sum);
             Console.ReadLine();
 
+            var NumArray2 = new int[] { 20, 40, 60, 80, 100 };
+
+            foreach(var item in NumArray2)
+            {
+                list04.Add(item * 10);
+            }
+
+            var queue04 = new Queue<int>();
+            foreach(var item in list04)
+            {
+                queue04.Enqueue(item + 1);
+            }
+
+            var stack04 = new Stack<int>();
+            foreach(var item in queue04)
+            {
+                stack04.Push(item + 2);
+            }
+
+            foreach (var item in stack04)
+            {
+                sum += item;
+            }
+            Console.WriteLine(sum);
+
+            Console.WriteLine("\n\nArrayList\n\n");
+            var objectList = new ArrayList();
+            objectList.Add(10);
+            objectList.Add("hi");
+            objectList.Add(true);
+            objectList.Add(DateTime.Now);
+
+            foreach(var item in objectList)
+            {
+                Console.WriteLine($"{item.GetType(), -20}{item}");
+            }
         }
 
         void DoThis() {

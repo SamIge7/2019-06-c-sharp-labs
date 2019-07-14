@@ -48,7 +48,7 @@ namespace labs_24_gaming_interface
         private void Button01_Click(object sender, RoutedEventArgs e)
         {
            
-            ListBox01.Items.Add($"Hey {InputName.Text}, Welcome! \n\n Click Open Game to start! Have fun!") ; 
+            ListBox01.Items.Add($"Hey {InputName.Text}, Welcome! \n\n Click Start New Game to start! Have fun!") ; 
         }
 
         private void InputName_TextChanged(object sender, TextChangedEventArgs e)
