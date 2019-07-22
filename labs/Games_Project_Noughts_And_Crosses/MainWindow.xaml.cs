@@ -107,6 +107,16 @@ namespace Games_Project_Noughts_And_Crosses
 
             //Set button text to the result
             button.Content = Player1Turn ? "X" : "O";
+
+            //Change Noughts to Green
+            if (!Player1Turn)
+                button.Foreground = Brushes.Red;
+
+            //Toggle the players turns.
+            if (Player1Turn)
+                Player1Turn = false;
+            else
+                Player1Turn = true;
         }
     }
 }
