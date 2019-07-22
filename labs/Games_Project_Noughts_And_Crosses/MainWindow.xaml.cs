@@ -117,6 +117,27 @@ namespace Games_Project_Noughts_And_Crosses
                 Player1Turn = false;
             else
                 Player1Turn = true;
+
+            //Check for a winner
+            CheckForAWinner();
+        }
+
+        /// <summary>
+        /// Check if there is a winner of a 3 line straight
+        /// </summary>
+        private void CheckForAWinner()
+        {
+            //Check for Horizontal Wins
+
+            //Row 1
+            if(nResults[0] != MarkType.Free && (nResults[0] & nResults[1] & nResults[2]) == nResults[0])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button1_1.Background = Button2_1.Background = Button3_1.Background = Brushes.Green;
+            }
         }
     }
 }
