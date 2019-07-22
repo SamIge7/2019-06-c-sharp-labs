@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Games_Week_Project_Noughts_And_Crosses
+namespace Games_Project_Noughts_And_Crosses
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,13 +23,6 @@ namespace Games_Week_Project_Noughts_And_Crosses
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void BeginGame_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 window1 = new Window1();
-            this.Visibility = Visibility.Hidden;
-            window1.Show();
         }
     }
 }

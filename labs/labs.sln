@@ -143,7 +143,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_58_razor", "labs_58_ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games_Project", "Games_Project\Games_Project.csproj", "{EE1111EF-CF40-4C47-964A-6161D9C019BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games_Week_Project_Noughts_And_Crosses", "Games_Week_Project_Noughts_And_Crosses\Games_Week_Project_Noughts_And_Crosses.csproj", "{172E01A0-2AFB-4BDD-9D8D-A31903C1B53A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games_Project_Noughts_And_Crosses", "Games_Project_Noughts_And_Crosses\Games_Project_Noughts_And_Crosses.csproj", "{56CC8B65-DDAA-4FA3-B1C1-E16D13A91B16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -431,10 +431,10 @@ Global
 		{EE1111EF-CF40-4C47-964A-6161D9C019BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1111EF-CF40-4C47-964A-6161D9C019BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1111EF-CF40-4C47-964A-6161D9C019BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{172E01A0-2AFB-4BDD-9D8D-A31903C1B53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{172E01A0-2AFB-4BDD-9D8D-A31903C1B53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{172E01A0-2AFB-4BDD-9D8D-A31903C1B53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{172E01A0-2AFB-4BDD-9D8D-A31903C1B53A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CC8B65-DDAA-4FA3-B1C1-E16D13A91B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CC8B65-DDAA-4FA3-B1C1-E16D13A91B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CC8B65-DDAA-4FA3-B1C1-E16D13A91B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CC8B65-DDAA-4FA3-B1C1-E16D13A91B16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

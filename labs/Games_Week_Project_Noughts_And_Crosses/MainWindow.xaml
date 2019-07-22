@@ -25,10 +25,46 @@
         <Grid.Background>
             <SolidColorBrush Color="DarkSlateBlue"/>
         </Grid.Background>
-        <TextBox x:Name="Title" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="25" Opacity="0.5" Text="Noughts and Crosses" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="40" />
-        <TextBox x:Name="Player1Name" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Opacity="0.9" />
-        <TextBox x:Name="Player2Name" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Opacity="0.9" />
-        <Button x:Name="BeginGame" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Begin Game" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Background="MidnightBlue" Foreground="White"/>
-        <ListBox x:Name="Leaderboard" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="5" Opacity="0.9"/>
+        <TextBox x:Name="Title" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="25" Opacity="0.9" Text="Noughts and Crosses" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="40" />
+        <TextBox x:Name="Player1Name" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Opacity="0.3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Text="{Binding Text, FallbackValue='Player 1, enter your name here'}" />
+        <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" Foreground="DarkGray">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Text}" Value="" />
+                                <Condition Binding="{Binding ElementName=Player1Name, Path=IsKeyboardFocused}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.Setters>
+                                <Setter Property="Visibility" Value="Visible" />
+                            </MultiDataTrigger.Setters>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBox x:Name="Player2Name" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Opacity="0.3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Text="{Binding Text, FallbackValue='Player 2, enter your name here'}"/>
+        <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" Foreground="DarkGray">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Text}" Value="" />
+                                <Condition Binding="{Binding ElementName=Player2Name, Path=IsKeyboardFocused}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.Setters>
+                                <Setter Property="Visibility" Value="Visible" />
+                            </MultiDataTrigger.Setters>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button x:Name="BeginGame" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Begin Game" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Background="MidnightBlue" Foreground="White" Click="BeginGame_Click"/>
+        <ListBox x:Name="Leaderboard" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="5" Opacity="0.3" Foreground="White"/>
     </Grid>
-</Window>
+</Window> 
