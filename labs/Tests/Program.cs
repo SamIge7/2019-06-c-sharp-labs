@@ -13,6 +13,7 @@ namespace Tests
             var x = Enumerable.Range(1, 10).ToArray();
             int[] y = new int[4] { 10, 20, 30, 40 };
             Eng35Tests.CreateArrayFromSentence("Sam is Amazing");
+            Eng35Tests.CreateArrayFromSentence2("Sam is the best");
             Eng35Tests.Calculate_Words_In_Sentence("Sam is Amazing");
             Eng35Tests.Turn_First_Word_To_Uppercase("Sam is Amazing");
             Eng35Tests.Mega_Multiple_Coding_Loop(r);
@@ -65,6 +66,16 @@ namespace Tests
             return words;
         }
 
+        public static string[] CreateArrayFromSentence2(string sentence)
+        {
+            string[] words = sentence.Split(' ');
+            foreach (var word in words)
+            {
+                Console.WriteLine(words);
+            }
+            return words;
+        }
+
         // Pass in a sentence and calculate number of words in sentence
         public static int Calculate_Words_In_Sentence(string sentence)
         {
@@ -98,6 +109,18 @@ namespace Tests
                 }
             }
             return count;*/
+        }
+
+        public static int CalculateWordsInSentence2(string sentence)
+        {
+            int counter = 0;
+            string[] words = sentence.Split(' ');
+            foreach (var word in words)
+            {
+                counter++;
+            }
+            Console.WriteLine(counter);
+            return counter;
         }
 
         public static string Turn_First_Word_To_Uppercase(string sentence)

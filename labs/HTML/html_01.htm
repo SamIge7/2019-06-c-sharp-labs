@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- HTML is a text file with tags to create a page structure-->
+<html">
+    <!--The Head has metadata about the page-->
+ <head>
+        <title>MegaPage</title>
+        <link href="style.css" rel="stylesheet"/>
+</head>
+<!--Body is visible elements-->
+ <body>
+     <h1>This is a title</h1>   
+     <h2>This is a title</h2>   
+     <h3>This is a title</h3>   
+     <h4>This is a title</h4>   
+     <h5>This is a title</h5>   
+     <!--Unordered List-->
+     <ul>
+         <li>One</li>
+         <li>Two</li>
+         <li>Three</li>
+     </ul>
+     <!--Ordered List-->
+     <ol>
+         <li>One</li>
+         <li>Two</li>
+         <li>Three</li>
+     </ol>
+     <button onclick="alert('hello')">Click To Alert</button>
+     <button onclick="RunSomeCode()">Click To Alert</button>
+     <script>
+         alert('Hey, what are you doing loading this page?');
+         prompt('you have been hacked - click here to close the window');
+         alert('Window deletion process will begin');
+         console.log("we are logging text behind the scenes");
+         var counter = 0;
+         function RunSomeCode() {
+             counter++;
+             console.log("Printing some more text" + counter);
+         }
+     </script>
+     <img src="images.jfif" width="400" height="400"/>
+ </body>
+</html">

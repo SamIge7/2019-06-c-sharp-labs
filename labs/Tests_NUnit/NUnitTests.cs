@@ -2,8 +2,10 @@ using NUnit.Framework;
 using labs_22_first_test;
 using Tests;
 using labs_48_snaplab_loops;
+using snaplab_loops2;
 using static Tests.Eng35Tests;
 using static labs_48_snaplab_loops.Program;
+using static snaplab_loops2.Programme;
 namespace Tests
 {
     public class NUnitTests
@@ -82,24 +84,31 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(2,10,4,2)]
+        [TestCase(2, 10, 4, 2)]
         public void DivisibleTest(int start, int end, int divisor, int expected)
         {
             var actual = Eng35Tests.How_Many_Numbers_Divisible_By(start, end, divisor);
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(new int[] { 10,20,30,40},1012)]
-        public void ArrayQueueStackTest (int[] array, int expected)
+        [TestCase(new int[] { 10, 20, 30, 40 }, 1012)]
+        public void ArrayQueueStackTest(int[] array, int expected)
         {
             var actual = Eng35Tests.Array_Loop_Queue_Stack(array);
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(new int[] { 5,6,7,8,9}, 35840)]
-        public void ArrayLoopsTest (int[] array, int expected)
+        [TestCase(new int[] { 5, 6, 7, 8, 9 }, 35840)]
+        public void ArrayLoopsTest(int[] array, int expected)
         {
             var actual = Program.Loops(array);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] {1,2,3,4,5,6,7,8,9,10},1330)]
+        public void CodingLoopsTest(int[] array, int expected)
+        {
+            var actual = Programme.CodingLoop(array);
             Assert.AreEqual(expected, actual);
         }
     }

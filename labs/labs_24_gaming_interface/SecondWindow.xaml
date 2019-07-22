@@ -21,9 +21,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.Background>
-            <ImageBrush ImageSource="C:\2019-06-c-sharp-labs\labs\labs_24_gaming_interface\images.jfif" />
-        </Grid.Background>
+        
         <TextBox x:Name="QuestionLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Opacity="0.3" HorizontalContentAlignment="Center" FontSize="25" />
         <TextBox x:Name="ResultBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Opacity="0.3" />
         <TextBox x:Name="AnswerBox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Opacity="0.3"/>

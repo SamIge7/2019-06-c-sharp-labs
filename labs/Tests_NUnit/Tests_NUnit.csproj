@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\labs_22_first_test\labs_22_first_test.csproj" />
     <ProjectReference Include="..\labs_48_snaplab_loops\labs_48_snaplab_loops.csproj" />
+    <ProjectReference Include="..\snaplab_loops2\snaplab_loops2.csproj" />
     <ProjectReference Include="..\Tests\Tests.csproj" />
   </ItemGroup>
 
