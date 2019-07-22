@@ -20,9 +20,24 @@ namespace Games_Project_Noughts_And_Crosses
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Private Members
+
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
+            NewGame();
+        }
+        #endregion
+
+        private void NewGame()
+        {
+
         }
     }
 }
