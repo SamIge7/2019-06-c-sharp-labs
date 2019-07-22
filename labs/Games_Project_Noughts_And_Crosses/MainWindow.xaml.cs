@@ -82,7 +82,31 @@ namespace Games_Project_Noughts_And_Crosses
         /// <param name="e">The event of the click</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Start a new game on the click after it has finished
+            if (GameHasEnded)
+            {
+                NewGame();
+                return;
+            }
 
+            //Cast the sender to a button
+            var button = (Button)sender;
+
+            //Find the button position in the array
+            var column = Grid.GetColumn(button);
+            var row = Grid.GetRow(button);
+
+            var index = column + (row * 3);
+
+            //Don;t do anything if the cell already has a value in it
+            if (nResults[index] != MarkType.Free)
+                return;
+
+            //Set the cell value based on which player's turn it is
+            nResults[index] = Player1Turn ? MarkType.Cross : MarkType.Nought;
+
+            //Set button text to the result
+            button.Content = Player1Turn ? "X" : "O";
         }
     }
 }
