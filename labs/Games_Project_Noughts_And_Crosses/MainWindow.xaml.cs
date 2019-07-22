@@ -48,6 +48,9 @@ namespace Games_Project_Noughts_And_Crosses
         }
         #endregion
 
+        /// <summary>
+        /// Starts a new game and clears all values back to the start
+        /// </summary>
         private void NewGame()
         {
             //Create a new blank array of free cells
@@ -62,8 +65,24 @@ namespace Games_Project_Noughts_And_Crosses
             //Iterate every button on Grid.
             Container.Children.Cast<Button>().ToList().ForEach(button =>
             {
-
+                //Change Background, Foreground and Content to default Values
+                button.Content = string.Empty;
+                button.Background = Brushes.White;
+                button.Foreground = Brushes.Blue;
             });
+
+            //Make sure game hasn't finished
+            GameHasEnded = false;
+        }
+
+        /// <summary>
+        /// Handles a Button Click Event
+        /// </summary>
+        /// <param name="sender">The button that was clicked</param>
+        /// <param name="e">The event of the click</param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
