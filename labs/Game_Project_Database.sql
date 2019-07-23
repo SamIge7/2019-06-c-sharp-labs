@@ -6,11 +6,11 @@ go
 
 use GameLeaderboard
 CREATE TABLE MainLeaderboard (playername varchar(50) NOT NULL ,
-							 Wins int,
-							 Losses int)
+							 Wins int not null,
+							 Losses int not null)
 go
 
 DELETE FROM MainLeaderboard Where playername = 'Sam'
-INSERT INTO MainLeaderboard (playername) Values ('Sam')
+INSERT INTO MainLeaderboard (playername,Wins,Losses) Values ('Sam', 0, 0)
 
 select*from MainLeaderboard
