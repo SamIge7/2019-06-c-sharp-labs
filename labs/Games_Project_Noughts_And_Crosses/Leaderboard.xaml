@@ -23,7 +23,7 @@
             <SolidColorBrush Color="Blue"/>
         </Grid.Background>
         <TextBox x:Name="Leaderboard_Title" Grid.Row="0" Grid.ColumnSpan="4" Text="Leaderboard" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
-        <ListBox x:Name="Leaderboard" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.7" FontSize="15">
+        <ListBox x:Name="Leaderboard2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.7" FontSize="15">
         <ListBox.ItemTemplate>
             <DataTemplate>
                 <TextBlock>

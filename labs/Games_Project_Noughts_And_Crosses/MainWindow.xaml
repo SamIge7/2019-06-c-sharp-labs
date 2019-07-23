@@ -43,6 +43,6 @@
         <Button Click="Button_Click" x:Name="Button2_2" Grid.Column="2" Grid.Row="2"/>
 
         <TextBox x:Name="GameResults" Grid.Row="3" Grid.ColumnSpan="3" Background="Gray" Opacity="0.7"/>
-        <Button x:Name="Leaderboard" Grid.Column="1" Grid.Row="4" Background="Blue" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Leaderboard" FontSize="30"/>
+        <Button x:Name="Leaderboard" Grid.Column="1" Grid.Row="4" Background="Blue" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Leaderboard" FontSize="30" Click="Leaderboard_Click"/>
     </Grid>
 </Window>

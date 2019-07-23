@@ -32,7 +32,8 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 mainLeaderboards = db.MainLeaderboard.ToList();
             }
-            Leaderboard.ItemsSource = mainLeaderboards;
+            Leaderboard2.ItemsSource = mainLeaderboards;
+            
         }
     }
 }
