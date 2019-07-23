@@ -129,15 +129,109 @@ namespace Games_Project_Noughts_And_Crosses
         {
             //Check for Horizontal Wins
 
-            //Row 1
-            if(nResults[0] != MarkType.Free && (nResults[0] & nResults[1] & nResults[2]) == nResults[0])
+            #region Horizontal Wins
+            //Row 0
+            if (nResults[0] != MarkType.Free && (nResults[0] & nResults[1] & nResults[2]) == nResults[0])
             {
                 //Game Ends
                 GameHasEnded = true;
 
                 //Highlight winning cells in green
-                Button1_1.Background = Button2_1.Background = Button3_1.Background = Brushes.Green;
+                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
             }
+
+            //Row 1
+            if (nResults[3] != MarkType.Free && (nResults[3] & nResults[4] & nResults[5]) == nResults[3])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button0_1.Background = Button1_1.Background = Button2_0.Background = Brushes.Green;
+            }
+
+            //Row 2
+            if (nResults[6] != MarkType.Free && (nResults[6] & nResults[7] & nResults[8]) == nResults[6])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
+            }
+            #endregion
+
+            #region Vertical Wins
+
+            //Column 1
+            if (nResults[0] != MarkType.Free && (nResults[0] & nResults[3] & nResults[6]) == nResults[0])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button0_0.Background = Button0_1.Background = Button0_2.Background = Brushes.Green;
+            }
+
+            //Column 2
+            if (nResults[1] != MarkType.Free && (nResults[1] & nResults[4] & nResults[7]) == nResults[1])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button1_0.Background = Button1_1.Background = Button1_2.Background = Brushes.Green;
+            }
+
+            //Column 3
+            if (nResults[2] != MarkType.Free && (nResults[2] & nResults[5] & nResults[8]) == nResults[2])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button2_0.Background = Button2_1.Background = Button2_2.Background = Brushes.Green;
+            }
+            #endregion
+
+            #region Diagonal Wins
+
+            //Diagonal 1
+            if (nResults[0] != MarkType.Free && (nResults[0] & nResults[4] & nResults[8]) == nResults[0])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button0_0.Background = Button1_1.Background = Button2_2.Background = Brushes.Green;
+            }
+
+            //Diagonal 2
+            if (nResults[2] != MarkType.Free && (nResults[2] & nResults[4] & nResults[6]) == nResults[2])
+            {
+                //Game Ends
+                GameHasEnded = true;
+
+                //Highlight winning cells in green
+                Button2_0.Background = Button1_1.Background = Button0_2.Background = Brushes.Green;
+            }
+            #endregion
+
+            #region No Winners
+
+            //Check for no winner and fill board
+            if(!nResults.Any(item => item == MarkType.Free))
+            {
+                //Game Ended
+                GameHasEnded = true;
+
+                //Turn all cells orange
+                Container.Children.Cast<Button>().ToList().ForEach(button =>
+                {
+                    button.Background = Brushes.Orange;
+                });
+            }
+            #endregion
         }
     }
 }
