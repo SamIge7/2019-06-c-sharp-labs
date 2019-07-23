@@ -46,7 +46,25 @@
             </TextBlock.Style>
         </TextBlock>
         <TextBox x:Name="Player2Name" Grid.Row="4" Grid.ColumnSpan="2" Opacity="0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Text="{Binding Text, FallbackValue='Player 2, enter your name here'}"/>
-        <Button x:Name="BeginGame" Grid.Row="5" Grid.ColumnSpan="2" Background="Blue" Foreground="White" Content="Begin" FontWeight="Bold" FontSize="40"/>
+        <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Text}" Value="" />
+                                <Condition Binding="{Binding ElementName=Player2Name, Path=IsKeyboardFocused}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.Setters>
+                                <Setter Property="Visibility" Value="Visible" />
+                            </MultiDataTrigger.Setters>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button x:Name="BeginGame" Grid.Row="5" Grid.ColumnSpan="2" Background="Blue" Foreground="White" Content="Begin" FontWeight="Bold" FontSize="40" Click="BeginGame_Click"/>
         <TextBox x:Name="Leaderboard" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="4" Opacity="0.7"/>
     </Grid>
 </Window>

@@ -18,7 +18,7 @@ namespace Games_Project_Noughts_And_Crosses
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Game : Window
     {
         #region Private Members
         /// <summary>
@@ -41,7 +41,7 @@ namespace Games_Project_Noughts_And_Crosses
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public MainWindow()
+        public Game()
         {
             InitializeComponent();
             NewGame();

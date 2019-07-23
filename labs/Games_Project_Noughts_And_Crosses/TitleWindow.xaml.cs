@@ -23,5 +23,12 @@ namespace Games_Project_Noughts_And_Crosses
         {
             InitializeComponent();
         }
+
+        private void BeginGame_Click(object sender, RoutedEventArgs e)
+        {
+            Game game = new Game();
+            this.Visibility = Visibility.Hidden;
+            game.Show();
+        }
     }
 }
