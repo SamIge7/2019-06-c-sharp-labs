@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Games_Project_Noughts_And_Crosses"
         mc:Ignorable="d"
-        Title="TitleWindow" Height="Auto" Width="Auto">
+        Title="Title Screen" Height="Auto" Width="Auto">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,6 +29,6 @@
         <TextBox x:Name="Player1Name" Grid.Row="2" Grid.ColumnSpan="2" Opacity="0.5"/>
         <TextBox x:Name="Player2Name" Grid.Row="4" Grid.ColumnSpan="2" Opacity="0.5"/>
         <Button x:Name="BeginGame" Grid.Row="5" Grid.ColumnSpan="2" Background="Blue" Foreground="White" Content="Begin" FontWeight="Bold" FontSize="40"/>
-       
+        <TextBox x:Name="Leaderboard" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="4" Opacity="0.7"/>
     </Grid>
 </Window>
