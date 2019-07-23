@@ -85,7 +85,6 @@ namespace Games_Project_Noughts_And_Crosses
             //Start a new game on the click after it has finished
             if (GameHasEnded)
             {
-                if()
                 NewGame();
                 return;
             }
@@ -235,11 +234,5 @@ namespace Games_Project_Noughts_And_Crosses
             #endregion
         }
 
-        private void Leaderboard_Click(object sender, RoutedEventArgs e)
-        {
-            Leaderboard leaderboard = new Leaderboard();
-            this.Visibility = Visibility.Hidden;
-            leaderboard.Show();
-        }
     }
 }
