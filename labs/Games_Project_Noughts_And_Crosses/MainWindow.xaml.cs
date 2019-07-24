@@ -88,7 +88,7 @@ namespace Games_Project_Noughts_And_Crosses
         /// <param name="e">The event of the click</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Start a new game on the click after it has finished
+            //Start a new game and update database on the click after it has finished
             if (GameHasEnded)
             {
                 using(var db = new GameLeaderboard2Entities())
@@ -100,7 +100,7 @@ namespace Games_Project_Noughts_And_Crosses
                         updateplayer1.Wins++;
 
                         MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
-                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
                         updateplayer2.Losses++;
                         db.SaveChanges();
                     }
@@ -111,12 +111,13 @@ namespace Games_Project_Noughts_And_Crosses
                         updateplayer1.Losses++;
 
                         MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
-                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
                         updateplayer2.Wins++;
                         db.SaveChanges();
                     }
                     
                 }
+
                 NewGame();
                 return;
             }

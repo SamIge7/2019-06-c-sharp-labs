@@ -54,6 +54,7 @@ namespace Games_Project_Noughts_And_Crosses
 
                 using (var db = new GameLeaderboard2Entities())
                 {
+                    
                     MainLeaderboard2 newplayer1 = new MainLeaderboard2();
                     newplayer1.PlayerName = Player1Name.Text;
                     newplayer1.Wins = p1wins;
