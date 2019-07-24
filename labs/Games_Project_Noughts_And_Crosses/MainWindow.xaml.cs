@@ -20,6 +20,7 @@ namespace Games_Project_Noughts_And_Crosses
     /// </summary>
     public partial class Game : Window
     {
+
         #region Private Members
         /// <summary>
         /// Holds the current results of cells in the active game
@@ -85,7 +86,7 @@ namespace Games_Project_Noughts_And_Crosses
             //Start a new game on the click after it has finished
             if (GameHasEnded)
             {
-                Leaderboard_Button.Visibility = Visibility.Visible;
+                
                 NewGame();
                 return;
             }
