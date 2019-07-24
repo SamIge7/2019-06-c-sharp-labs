@@ -80,8 +80,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GameDatabase2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameDatabase2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameDatabase2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameDatabase2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameDatabase2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameDatabase2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GameLeaderboard.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameLeaderboard.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameLeaderboard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameLeaderboard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameLeaderboard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameLeaderboard.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainLeaderboard.cs">
-      <DependentUpon>GameDatabase.tt</DependentUpon>
+      <DependentUpon>GameLeaderboard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainLeaderboard2.cs">
+      <DependentUpon>GameDatabase2.tt</DependentUpon>
     </Compile>
     <Compile Include="TitleWindow.xaml.cs">
       <DependentUpon>TitleWindow.xaml</DependentUpon>
@@ -129,6 +162,20 @@
     <None Include="GameDatabase.edmx.diagram">
       <DependentUpon>GameDatabase.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="GameLeaderboard.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GameLeaderboard.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="GameDatabase2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GameDatabase2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GameDatabase2.edmx.diagram">
+      <DependentUpon>GameDatabase2.edmx</DependentUpon>
+    </None>
+    <None Include="GameLeaderboard.edmx.diagram">
+      <DependentUpon>GameLeaderboard.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,6 +195,26 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GameDatabase.edmx</DependentUpon>
       <LastGenOutput>GameDatabase.cs</LastGenOutput>
+    </Content>
+    <Content Include="GameDatabase2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameDatabase2.edmx</DependentUpon>
+      <LastGenOutput>GameDatabase2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GameDatabase2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameDatabase2.edmx</DependentUpon>
+      <LastGenOutput>GameDatabase2.cs</LastGenOutput>
+    </Content>
+    <Content Include="GameLeaderboard.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameLeaderboard.edmx</DependentUpon>
+      <LastGenOutput>GameLeaderboard.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GameLeaderboard.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameLeaderboard.edmx</DependentUpon>
+      <LastGenOutput>GameLeaderboard.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

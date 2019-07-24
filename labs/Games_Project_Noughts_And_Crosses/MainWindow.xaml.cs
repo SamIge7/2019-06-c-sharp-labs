@@ -36,6 +36,11 @@ namespace Games_Project_Noughts_And_Crosses
         /// True if the game has ended
         /// </summary>
         private bool GameHasEnded;
+
+        /// <summary>
+        /// True if Player 1 has won.
+        /// </summary>
+        private bool Player1Winner;
         #endregion
 
         #region Constructor
@@ -86,7 +91,32 @@ namespace Games_Project_Noughts_And_Crosses
             //Start a new game on the click after it has finished
             if (GameHasEnded)
             {
-                
+                using(var db = new GameLeaderboard2Entities())
+                {
+                    if(Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First(); 
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                    
+                }
                 NewGame();
                 return;
             }
@@ -138,6 +168,16 @@ namespace Games_Project_Noughts_And_Crosses
                 //Game Ends
                 GameHasEnded = true;
 
+                //Print Out Winner
+                if(nResults[0] == nResults[1] && nResults[1] == nResults[2] && nResults[2] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[0] == nResults[1] && nResults[1] == nResults[2] && nResults[2] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
+
                 //Highlight winning cells in green
                 Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
             }
@@ -148,6 +188,17 @@ namespace Games_Project_Noughts_And_Crosses
                 //Game Ends
                 GameHasEnded = true;
 
+
+                //Print Out Winner
+                if (nResults[3] == nResults[4] && nResults[4] == nResults[5] && nResults[5] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[3] == nResults[4] && nResults[4] == nResults[5] && nResults[5] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
+
                 //Highlight winning cells in green
                 Button0_1.Background = Button1_1.Background = Button2_0.Background = Brushes.Green;
             }
@@ -157,6 +208,17 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 //Game Ends
                 GameHasEnded = true;
+
+
+                //Print Out Winner
+                if (nResults[6] == nResults[7] && nResults[7] == nResults[8] && nResults[8] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[6] == nResults[7] && nResults[7] == nResults[8] && nResults[8] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
 
                 //Highlight winning cells in green
                 Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
@@ -171,6 +233,17 @@ namespace Games_Project_Noughts_And_Crosses
                 //Game Ends
                 GameHasEnded = true;
 
+
+                //Print Out Winner
+                if (nResults[0] == nResults[3] && nResults[3] == nResults[6] && nResults[6] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[0] == nResults[3] && nResults[3] == nResults[6] && nResults[6] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
+
                 //Highlight winning cells in green
                 Button0_0.Background = Button0_1.Background = Button0_2.Background = Brushes.Green;
             }
@@ -181,6 +254,17 @@ namespace Games_Project_Noughts_And_Crosses
                 //Game Ends
                 GameHasEnded = true;
 
+
+                //Print Out Winner
+                if (nResults[1] == nResults[4] && nResults[4] == nResults[7] && nResults[7] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[1] == nResults[4] && nResults[4] == nResults[7] && nResults[7] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
+
                 //Highlight winning cells in green
                 Button1_0.Background = Button1_1.Background = Button1_2.Background = Brushes.Green;
             }
@@ -190,6 +274,17 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 //Game Ends
                 GameHasEnded = true;
+
+
+                //Print Out Winner
+                if (nResults[2] == nResults[5] && nResults[5] == nResults[8] && nResults[8] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[2] == nResults[5] && nResults[5] == nResults[8] && nResults[8] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
 
                 //Highlight winning cells in green
                 Button2_0.Background = Button2_1.Background = Button2_2.Background = Brushes.Green;
@@ -204,6 +299,17 @@ namespace Games_Project_Noughts_And_Crosses
                 //Game Ends
                 GameHasEnded = true;
 
+
+                //Print Out Winner
+                if (nResults[0] == nResults[4] && nResults[4] == nResults[8] && nResults[8] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[0] == nResults[4] && nResults[4] == nResults[8] && nResults[8] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
+
                 //Highlight winning cells in green
                 Button0_0.Background = Button1_1.Background = Button2_2.Background = Brushes.Green;
             }
@@ -213,6 +319,17 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 //Game Ends
                 GameHasEnded = true;
+
+
+                //Print Out Winner
+                if (nResults[2] == nResults[4] && nResults[4] == nResults[6] && nResults[6] == MarkType.Cross)
+                {
+                    Player1Winner = true;
+                }
+                else if (nResults[2] == nResults[4] && nResults[4] == nResults[6] && nResults[6] == MarkType.Nought)
+                {
+                    Player1Winner = false;
+                }
 
                 //Highlight winning cells in green
                 Button2_0.Background = Button1_1.Background = Button0_2.Background = Brushes.Green;

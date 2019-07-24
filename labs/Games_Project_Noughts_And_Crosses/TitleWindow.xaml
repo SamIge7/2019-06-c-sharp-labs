@@ -71,7 +71,7 @@
                     <TextBlock>
                         <TextBlock.Text>
                             <MultiBinding StringFormat=" {0} has {1} wins and {2} losses">
-                                <Binding Path="playername" />
+                                <Binding Path="PlayerName" />
                                 <Binding Path="Wins" />
                                 <Binding Path="Losses" />
                             </MultiBinding>

@@ -12,10 +12,10 @@ namespace Games_Project_Noughts_And_Crosses
     using System;
     using System.Collections.Generic;
     
-    public partial class MainLeaderboard
+    public partial class MainLeaderboard2
     {
-        public int ID { get; set; }
-        public string playername { get; set; }
+        public int Id { get; set; }
+        public string PlayerName { get; set; }
         public Nullable<int> Wins { get; set; }
         public Nullable<int> Losses { get; set; }
     }

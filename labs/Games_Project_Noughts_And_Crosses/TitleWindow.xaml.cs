@@ -20,7 +20,7 @@ namespace Games_Project_Noughts_And_Crosses
     /// </summary>
     public partial class TitleWindow : Window
     {
-        List<MainLeaderboard> mainLeaderboards;
+        List<MainLeaderboard2> mainLeaderboards;
         public TitleWindow()
         {
             InitializeComponent();
@@ -29,9 +29,9 @@ namespace Games_Project_Noughts_And_Crosses
 
         void Initialise()
         {
-            using (var db = new GameLeaderboardEntities())
+            using (var db = new GameLeaderboard2Entities())
             {
-                mainLeaderboards = db.MainLeaderboard.ToList();
+                mainLeaderboards = db.MainLeaderboard2.ToList();
             }
             Leaderboard.ItemsSource = mainLeaderboards;
         }
@@ -52,19 +52,19 @@ namespace Games_Project_Noughts_And_Crosses
                 int p2wins = 0;
                 int p2losses = 0;
 
-                using (var db = new GameLeaderboardEntities())
+                using (var db = new GameLeaderboard2Entities())
                 {
-                    MainLeaderboard newplayer1 = new MainLeaderboard();
-                    newplayer1.playername = Player1Name.Text;
+                    MainLeaderboard2 newplayer1 = new MainLeaderboard2();
+                    newplayer1.PlayerName = Player1Name.Text;
                     newplayer1.Wins = p1wins;
                     newplayer1.Losses = p1losses;
-                    db.MainLeaderboard.Add(newplayer1);
+                    db.MainLeaderboard2.Add(newplayer1);
 
-                    MainLeaderboard newplayer2 = new MainLeaderboard();
-                    newplayer2.playername = Player2Name.Text;
+                    MainLeaderboard2 newplayer2 = new MainLeaderboard2();
+                    newplayer2.PlayerName = Player2Name.Text;
                     newplayer2.Wins = p2wins;
                     newplayer2.Losses = p2losses;
-                    db.MainLeaderboard.Add(newplayer2);
+                    db.MainLeaderboard2.Add(newplayer2);
                     db.SaveChanges();
                 }
             }
