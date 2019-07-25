@@ -20,6 +20,7 @@ namespace Games_Project_Noughts_And_Crosses
     /// </summary>
     public partial class TitleWindow : Window
     {
+        //Linking Database to this page
         List<MainLeaderboard2> mainLeaderboards;
         public TitleWindow()
         {
@@ -29,6 +30,7 @@ namespace Games_Project_Noughts_And_Crosses
 
         void Initialise()
         {
+            //Display Database in order of wins descending
             using (var db = new GameLeaderboard2Entities())
             {
                 mainLeaderboards = db.MainLeaderboard2.ToList();
@@ -38,6 +40,7 @@ namespace Games_Project_Noughts_And_Crosses
 
         private void BeginGame_Click(object sender, RoutedEventArgs e)
         {
+            //Create new rows in database when button is clicked
             if(Player1Name.Text == "" || Player2Name.Text == "")
             {
                 MessageBox.Show("Make sure both players have put their names in");
@@ -70,6 +73,7 @@ namespace Games_Project_Noughts_And_Crosses
                 }
             }
 
+            //Open Main Game Window
             Game game = new Game();
             this.Visibility = Visibility.Hidden;
             game.Show();

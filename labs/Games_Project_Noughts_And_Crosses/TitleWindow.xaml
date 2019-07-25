@@ -65,7 +65,7 @@
             </TextBlock.Style>
         </TextBlock>
         <Button x:Name="BeginGame" Grid.Row="5" Grid.ColumnSpan="2" Background="Blue" Foreground="White" Content="Begin" FontWeight="Bold" FontSize="40" Click="BeginGame_Click"/>
-        <ListBox x:Name="Leaderboard" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="4" Opacity="0.7" FontSize="15">
+        <ListBox x:Name="Leaderboard" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="Blue" Foreground="White" FontSize="15">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
