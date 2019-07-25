@@ -88,36 +88,9 @@ namespace Games_Project_Noughts_And_Crosses
         /// <param name="e">The event of the click</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Start a new game and update database on the click after it has finished
+            //Start a new game on the click after it has finished
             if (GameHasEnded)
             {
-                using(var db = new GameLeaderboard2Entities())
-                {
-                    if(Player1Winner == true)
-                    {
-                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
-                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
-                        updateplayer1.Wins++;
-
-                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
-                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
-                        updateplayer2.Losses++;
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
-                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First(); 
-                        updateplayer1.Losses++;
-
-                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
-                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
-                        updateplayer2.Wins++;
-                        db.SaveChanges();
-                    }
-                    
-                }
-
                 NewGame();
                 return;
             }
@@ -181,6 +154,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+
+                }
             }
 
             //Row 1
@@ -188,7 +189,7 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 //Game Ends
                 GameHasEnded = true;
-
+                
 
                 //Print Out Winner
                 if (nResults[3] == nResults[4] && nResults[4] == nResults[5] && nResults[5] == MarkType.Cross)
@@ -202,6 +203,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button0_1.Background = Button1_1.Background = Button2_0.Background = Brushes.Green;
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+
+                }
             }
 
             //Row 2
@@ -223,6 +252,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+
+                }
             }
             #endregion
 
@@ -247,6 +304,33 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button0_0.Background = Button0_1.Background = Button0_2.Background = Brushes.Green;
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                }
             }
 
             //Column 2
@@ -268,6 +352,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button1_0.Background = Button1_1.Background = Button1_2.Background = Brushes.Green;
+
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                }
             }
 
             //Column 3
@@ -289,6 +401,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button2_0.Background = Button2_1.Background = Button2_2.Background = Brushes.Green;
+
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                }
             }
             #endregion
 
@@ -313,6 +453,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button0_0.Background = Button1_1.Background = Button2_2.Background = Brushes.Green;
+
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                }
             }
 
             //Diagonal 2
@@ -334,6 +502,34 @@ namespace Games_Project_Noughts_And_Crosses
 
                 //Highlight winning cells in green
                 Button2_0.Background = Button1_1.Background = Button0_2.Background = Brushes.Green;
+
+
+                //Update the database
+                using (var db = new GameLeaderboard2Entities())
+                {
+                    if (Player1Winner == true)
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Wins++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Losses++;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MainLeaderboard2 updateplayer1 = new MainLeaderboard2();
+                        updateplayer1 = db.MainLeaderboard2.OrderByDescending(i => i.Id).Skip(1).First();
+                        updateplayer1.Losses++;
+
+                        MainLeaderboard2 updateplayer2 = new MainLeaderboard2();
+                        updateplayer2 = db.MainLeaderboard2.OrderByDescending(i => i.Id).First();
+                        updateplayer2.Wins++;
+                        db.SaveChanges();
+                    }
+                }
             }
             #endregion
 
