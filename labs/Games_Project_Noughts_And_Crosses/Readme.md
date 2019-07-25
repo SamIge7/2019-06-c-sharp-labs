@@ -16,3 +16,7 @@ As soon as it appears, the game has begun and Player 1 has the first click.
 A winner will be shown by 3 green boxes in the winning line, and if it is a draw, all the boxes in the grid will go orange.
 To start another game with the same players, just click anywhere in the grid and it will all clear and start another game.
 To see your wins and losses on the leaderboard, you just close the game and reopen it again to see the title screen leaderboard updated.
+
+### Built with
+Entity 6.0
+WPF Framework
