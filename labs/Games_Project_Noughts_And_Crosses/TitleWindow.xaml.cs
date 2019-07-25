@@ -33,7 +33,7 @@ namespace Games_Project_Noughts_And_Crosses
             {
                 mainLeaderboards = db.MainLeaderboard2.ToList();
             }
-            Leaderboard.ItemsSource = mainLeaderboards;
+            Leaderboard.ItemsSource = mainLeaderboards.OrderByDescending(i => i.Wins);
         }
 
         private void BeginGame_Click(object sender, RoutedEventArgs e)
