@@ -26,8 +26,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="C:\2019-06-c-sharp-labs\labs\Games_Project\Quiz.jfif" Stretch="Uniform"/>
         </Grid.Background>
-        <TextBox x:Name="TitleTextBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="DarkGray" Text="Welcome! Type both player's name into the boxes below and click Start" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="Player1TextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Opacity="0.7" x:FieldModifier="public" Text="{Binding Text, FallbackValue='Player 1, enter your name here'}"/>
+        <TextBox x:Name="TitleTextBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="DarkGray" Text="Welcome! Type your name below and click Start" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+        <TextBox x:Name="Player1TextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Opacity="0.7" x:FieldModifier="public" Text="{Binding Text, FallbackValue='Please enter your name here'}"/>
         <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
@@ -37,25 +37,6 @@
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Text}" Value="" />
                                 <Condition Binding="{Binding ElementName=Player1TextBox, Path=IsKeyboardFocused}" Value="False" />
-                            </MultiDataTrigger.Conditions>
-                            <MultiDataTrigger.Setters>
-                                <Setter Property="Visibility" Value="Visible" />
-                            </MultiDataTrigger.Setters>
-                        </MultiDataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        <TextBox x:Name="Player2TextBox" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Background="DarkGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Opacity="0.7" x:FieldModifier="public" Text="{Binding Text, FallbackValue='Player 2, enter your name here'}"/>
-        <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed" />
-                    <Style.Triggers>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Text}" Value="" />
-                                <Condition Binding="{Binding ElementName=Player2TextBox, Path=IsKeyboardFocused}" Value="False" />
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>
                                 <Setter Property="Visibility" Value="Visible" />
