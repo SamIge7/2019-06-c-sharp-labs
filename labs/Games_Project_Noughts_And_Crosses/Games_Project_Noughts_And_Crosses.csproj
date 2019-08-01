@@ -110,6 +110,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameLeaderboard.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Leaderboard.xaml.cs">
+      <DependentUpon>Leaderboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainLeaderboard.cs">
       <DependentUpon>GameLeaderboard.tt</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
     <Compile Include="TitleWindow.xaml.cs">
       <DependentUpon>TitleWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Leaderboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

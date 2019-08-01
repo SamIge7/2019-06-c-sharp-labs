@@ -13,20 +13,35 @@ namespace SnapLab_18_Interfaces
             Dog max;
             Dog min;
             Dog middle;
-            Console.WriteLine(dog1.CompareTo(dog2));
+
             if (dog1.CompareTo(dog2) == 1)
             {
                 if(dog1.CompareTo(dog3) == 1)
                 {
                     if (dog2.CompareTo(dog3) == 1)
                     {
+                        middle = dog3;
+                    }
+                    else
+                    {
                         middle = dog2;
                     }
-                    
+
+                    max = dog1;
+
                 }
+                else
+                {
+                    min = dog3;
+                }
+
+                max = dog1;
             }
-            Console.WriteLine(dog1.CompareTo(dog3));
-            Console.WriteLine(dog2.CompareTo(dog3));
+            else
+            {
+                min = dog2;
+            }
+           
         }
     }
     class Dog: IComparable

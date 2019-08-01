@@ -13,9 +13,10 @@ namespace labs_63_events_OOP
                         We attach an OOP instance ie var james = new Child();
              */
             var James = new Child();
-            James.Grow();
-            James.Grow();
-            James.Grow();
+           for (int i = 1; i < 15; i++)
+            {
+                James.Grow();
+            }
         }
     }
 
