@@ -167,9 +167,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_67_serialise_json", "l
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_68_serialise_binary", "labs_68_serialise_binary\labs_68_serialise_binary.csproj", "{CD04904A-828A-4009-8E22-0C907A181323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_69_XML", "labs_69_XML\labs_69_XML.csproj", "{3205E148-9FB7-4F8A-80B6-84430D3462BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_69_XML", "labs_69_XML\labs_69_XML.csproj", "{3205E148-9FB7-4F8A-80B6-84430D3462BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_70_SQL_CRUD_App_with_raw_CSharp", "labs_70_SQL_CRUD_App_with_raw_CSharp\labs_70_SQL_CRUD_App_with_raw_CSharp.csproj", "{23D3D10E-8208-4854-8228-6025A337A5D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_70_SQL_CRUD_App_with_raw_CSharp", "labs_70_SQL_CRUD_App_with_raw_CSharp\labs_70_SQL_CRUD_App_with_raw_CSharp.csproj", "{23D3D10E-8208-4854-8228-6025A337A5D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labs_71_XML_From_Northwind", "labs_71_XML_From_Northwind\labs_71_XML_From_Northwind.csproj", "{814A36DA-7B67-4C86-9B79-224FFFB9BCF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -513,6 +515,10 @@ Global
 		{23D3D10E-8208-4854-8228-6025A337A5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23D3D10E-8208-4854-8228-6025A337A5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23D3D10E-8208-4854-8228-6025A337A5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{814A36DA-7B67-4C86-9B79-224FFFB9BCF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814A36DA-7B67-4C86-9B79-224FFFB9BCF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814A36DA-7B67-4C86-9B79-224FFFB9BCF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814A36DA-7B67-4C86-9B79-224FFFB9BCF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

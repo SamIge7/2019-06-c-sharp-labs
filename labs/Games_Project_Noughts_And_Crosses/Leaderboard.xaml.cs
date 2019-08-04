@@ -19,9 +19,21 @@ namespace Games_Project_Noughts_And_Crosses
     /// </summary>
     public partial class Leaderboard : Window
     {
+        List<MainLeaderboard2> mainLeaderboards;
         public Leaderboard()
         {
             InitializeComponent();
+            Initialise();
+        }
+
+        void Initialise()
+        {
+            //Display Database in order of wins descending
+            using (var db = new GameLeaderboard2Entities())
+            {
+                mainLeaderboards = db.MainLeaderboard2.ToList();
+            }
+            Leaderboard.ItemsSource = mainLeaderboards.OrderByDescending(i => i.Wins);
         }
     }
 }

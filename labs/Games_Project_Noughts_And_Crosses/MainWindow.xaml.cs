@@ -91,6 +91,9 @@ namespace Games_Project_Noughts_And_Crosses
             //Start a new game on the click after it has finished
             if (GameHasEnded)
             {
+                Leaderboard leaderboard = new Leaderboard();
+                leaderboard.Show();
+
                 NewGame();
                 return;
             }
