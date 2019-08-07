@@ -1,0 +1,18 @@
+﻿@model  MVC_Core_Entity_ToDoList_01.Models.Lists
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Test Index Page</h2>
+
+<ul>
+    @foreach(var item in Model.stringList)
+    {
+        <li>Item is <span id="span01">@item</span></li>
+    }
+
+    @foreach(var item in Model.intList)
+    {
+        <li>This is line <span id="span02">@item</span></li>
+    }
+</ul>

@@ -1,0 +1,36 @@
+﻿@model MVC_Core_Entity_ToDoList_01.Models.AthleticsMeetings
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AthleticsMeetings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AthleticsMeetingsID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
