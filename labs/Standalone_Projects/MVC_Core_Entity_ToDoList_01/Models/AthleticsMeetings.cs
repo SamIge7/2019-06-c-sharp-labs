@@ -11,9 +11,10 @@ namespace MVC_Core_Entity_ToDoList_01.Models
         public int AthleticsMeetingsID { get; set; }
         public string MeetingName { get; set; }
         public string MeetingLocation { get; set; }
-
         [Display(Name = "MeetingDate")]
         [DataType(DataType.Date)]
         public DateTime MeetingDate { get; set; }
+        public int? MeetingCategoryID { get; set; }
+        public virtual MeetingCategory MeetingCategory { get; set; }
     }
 }

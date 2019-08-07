@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.MeetingDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetingCategory)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +38,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MeetingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingCategory.CategoryName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AthleticsMeetingsID">Edit</a> |

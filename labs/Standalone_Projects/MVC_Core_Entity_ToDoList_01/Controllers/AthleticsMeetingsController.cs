@@ -21,7 +21,8 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
         // GET: AthleticsMeetings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AthleticsMeetings.ToListAsync());
+            var taskDbContext = _context.AthleticsMeetings.Include(a => a.MeetingCategory);
+            return View(await taskDbContext.ToListAsync());
         }
 
         // GET: AthleticsMeetings/Details/5
@@ -33,6 +34,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
             }
 
             var athleticsMeetings = await _context.AthleticsMeetings
+                .Include(a => a.MeetingCategory)
                 .FirstOrDefaultAsync(m => m.AthleticsMeetingsID == id);
             if (athleticsMeetings == null)
             {
@@ -45,6 +47,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
         // GET: AthleticsMeetings/Create
         public IActionResult Create()
         {
+            ViewData["MeetingCategoryID"] = new SelectList(_context.MeetingCategory, "MeetingCategoryID", "CategoryName");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AthleticsMeetingsID,MeetingName,MeetingLocation,MeetingDate")] AthleticsMeetings athleticsMeetings)
+        public async Task<IActionResult> Create([Bind("AthleticsMeetingsID,MeetingName,MeetingLocation,MeetingDate,MeetingCategoryID")] AthleticsMeetings athleticsMeetings)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MeetingCategoryID"] = new SelectList(_context.MeetingCategory, "MeetingCategoryID", "CategoryName", athleticsMeetings.MeetingCategoryID);
             return View(athleticsMeetings);
         }
 
@@ -77,6 +81,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
             {
                 return NotFound();
             }
+            ViewData["MeetingCategoryID"] = new SelectList(_context.MeetingCategory, "MeetingCategoryID", "CategoryName", athleticsMeetings.MeetingCategoryID);
             return View(athleticsMeetings);
         }
 
@@ -85,7 +90,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AthleticsMeetingsID,MeetingName,MeetingLocation,MeetingDate")] AthleticsMeetings athleticsMeetings)
+        public async Task<IActionResult> Edit(int id, [Bind("AthleticsMeetingsID,MeetingName,MeetingLocation,MeetingDate,MeetingCategoryID")] AthleticsMeetings athleticsMeetings)
         {
             if (id != athleticsMeetings.AthleticsMeetingsID)
             {
@@ -112,6 +117,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MeetingCategoryID"] = new SelectList(_context.MeetingCategory, "MeetingCategoryID", "CategoryName", athleticsMeetings.MeetingCategoryID);
             return View(athleticsMeetings);
         }
 
@@ -124,6 +130,7 @@ namespace MVC_Core_Entity_ToDoList_01.Controllers
             }
 
             var athleticsMeetings = await _context.AthleticsMeetings
+                .Include(a => a.MeetingCategory)
                 .FirstOrDefaultAsync(m => m.AthleticsMeetingsID == id);
             if (athleticsMeetings == null)
             {

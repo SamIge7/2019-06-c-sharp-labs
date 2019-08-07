@@ -32,9 +32,24 @@ namespace MVC_Core_Entity_ToDoList_01.Models
 
             //One Category can have many tasks
             builder.Entity<Task>().HasOne(task => task.Category).WithMany(category => category.Tasks);
+
+            //Relationships
+            //Meeting Category Name Required
+            builder.Entity<MeetingCategory>().Property(m => m.CategoryName).IsRequired().HasMaxLength(50);
+
+            //Every Athletics Meeting has one category
+            builder.Entity<MeetingCategory>().HasMany(m => m.AthleticsMeetings).WithOne(a => a.MeetingCategory);
+
+            //One Category can have many meetings
+            builder.Entity<AthleticsMeetings>().HasOne(a => a.MeetingCategory).WithMany(category => category.AthleticsMeetings);
         }
 
-        //Fluent API Relationships go right here
+        
         public DbSet<MVC_Core_Entity_ToDoList_01.Models.AthleticsMeetings> AthleticsMeetings { get; set; }
+
+        
+        public DbSet<MVC_Core_Entity_ToDoList_01.Models.MeetingCategory> MeetingCategory { get; set; }
+
+        
     }
 }
