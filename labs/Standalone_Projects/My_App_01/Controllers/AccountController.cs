@@ -27,6 +27,11 @@ namespace My_App_01_Following_Tutorial.Controllers
                 HttpContext.Session.SetString("username", username);
                 return View("Success");
             }
+            else if (username != null && password != null && username.Equals("sam7") && password.Equals("777"))
+            {
+                HttpContext.Session.SetString("username", username);
+                return View("Success");
+            }
             else
             {
                 ViewBag.error = "Invalid Account";

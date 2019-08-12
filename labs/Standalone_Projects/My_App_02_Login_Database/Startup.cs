@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace My_App_02_Login_Database
@@ -15,6 +16,12 @@ namespace My_App_02_Login_Database
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, identityrole = "" >()
+                                                  .AddEntityFrameworkStores<ApplicationDbContext>()
+                                                  .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +36,8 @@ namespace My_App_02_Login_Database
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+
+            app.UseAuthentication();
         }
     }
 }
