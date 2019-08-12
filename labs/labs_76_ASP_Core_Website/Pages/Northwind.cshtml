@@ -1,0 +1,35 @@
+﻿@page
+@model labs_76_ASP_Core_Website.Pages.NorthwindModel
+@{
+    ViewData["Title"] = "Northwind";
+}
+
+<h1>Northwind</h1>
+
+<p>Hover pover me please</p>
+
+<h2>List of Northwind Customers</h2>
+
+<table class="table-striped">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>City</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var customer in Model.customers)
+    {
+        <tr>
+            <td>@customer.CustomerID</td>
+            <td>@customer.ContactName</td>
+            <td>@customer.CompanyName</td>
+            <td>@customer.City</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
