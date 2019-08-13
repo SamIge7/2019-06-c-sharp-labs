@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using My_App_02_Database.Models;
 
 namespace My_App_02_Database.Models
 {
@@ -12,7 +13,8 @@ namespace My_App_02_Database.Models
             : base(options)
         {
         }
+        public DbSet<My_App_02_Database.Models.User> User { get; set; }
 
-        public DbSet<My_App_02_Database.Models.Users> Users { get; set; }
+        
     }
 }

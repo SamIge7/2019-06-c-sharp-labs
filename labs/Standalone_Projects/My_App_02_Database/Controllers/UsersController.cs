@@ -21,7 +21,7 @@ namespace My_App_02_Database.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -32,14 +32,14 @@ namespace My_App_02_Database.Controllers
                 return NotFound();
             }
 
-            var users = await _context.Users
-                .FirstOrDefaultAsync(m => m.UsersID == id);
-            if (users == null)
+            var user = await _context.User
+                .FirstOrDefaultAsync(m => m.UserID == id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(users);
+            return View(user);
         }
 
         // GET: Users/Create
@@ -53,15 +53,15 @@ namespace My_App_02_Database.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UsersID,FirstName,LastName")] Users users)
+        public async Task<IActionResult> Create([Bind("UserID,Username,Password")] User user)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(users);
+                _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(users);
+            return View(user);
         }
 
         // GET: Users/Edit/5
@@ -72,12 +72,12 @@ namespace My_App_02_Database.Controllers
                 return NotFound();
             }
 
-            var users = await _context.Users.FindAsync(id);
-            if (users == null)
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
-            return View(users);
+            return View(user);
         }
 
         // POST: Users/Edit/5
@@ -85,9 +85,9 @@ namespace My_App_02_Database.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UsersID,FirstName,LastName")] Users users)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID,Username,Password")] User user)
         {
-            if (id != users.UsersID)
+            if (id != user.UserID)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace My_App_02_Database.Controllers
             {
                 try
                 {
-                    _context.Update(users);
+                    _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsersExists(users.UsersID))
+                    if (!UserExists(user.UserID))
                     {
                         return NotFound();
                     }
@@ -112,7 +112,7 @@ namespace My_App_02_Database.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(users);
+            return View(user);
         }
 
         // GET: Users/Delete/5
@@ -123,14 +123,14 @@ namespace My_App_02_Database.Controllers
                 return NotFound();
             }
 
-            var users = await _context.Users
-                .FirstOrDefaultAsync(m => m.UsersID == id);
-            if (users == null)
+            var user = await _context.User
+                .FirstOrDefaultAsync(m => m.UserID == id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(users);
+            return View(user);
         }
 
         // POST: Users/Delete/5
@@ -138,15 +138,15 @@ namespace My_App_02_Database.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var users = await _context.Users.FindAsync(id);
-            _context.Users.Remove(users);
+            var user = await _context.User.FindAsync(id);
+            _context.User.Remove(user);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsersExists(int id)
+        private bool UserExists(int id)
         {
-            return _context.Users.Any(e => e.UsersID == id);
+            return _context.User.Any(e => e.UserID == id);
         }
     }
 }

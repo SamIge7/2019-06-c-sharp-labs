@@ -18,19 +18,19 @@ namespace My_App_02_Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("My_App_02_Database.Models.Users", b =>
+            modelBuilder.Entity("My_App_02_Database.Models.User", b =>
                 {
-                    b.Property<int>("UsersID")
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("Password");
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("Username");
 
-                    b.HasKey("UsersID");
+                    b.HasKey("UserID");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }
