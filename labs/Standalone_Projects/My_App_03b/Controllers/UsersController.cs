@@ -13,7 +13,7 @@ namespace My_App_03b.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View();
+            return View(db.Users.ToList());
         }
 
         public ActionResult Register()
