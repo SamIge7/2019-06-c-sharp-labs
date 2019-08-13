@@ -36,5 +36,41 @@ namespace My_App_03b.Controllers
             }
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User users)
+        {
+           if(ModelState.IsValid)
+            {
+                using (DataContext db = new DataContext())
+                {
+                    var obj = db.Users.Where(u => u.Username.Equals(users.Username) && u.Password.Equals(users.Password)).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        Session["UserID"] = obj.UserID.ToString();
+                        Session["Username"] = obj.Username.ToString();
+                        return RedirectToAction("LoggedIn");
+                    }
+                }
+            }
+            return View(users);
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if(Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
     }
 }
