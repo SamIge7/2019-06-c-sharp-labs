@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+
+    <legend>
+
+        @if (Session["ValidateSession"] != null)
+        {
+            <text>
+
+                Welcome!
+
+            </text>
+        }
+
+        <a asp-controller="users" asp-action="logout">Logout</a>
+
+    </legend>
+
+</fieldset>
+
