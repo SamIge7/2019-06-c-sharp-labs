@@ -12,11 +12,11 @@ namespace My_App_03d.Models
         [Display(Name = "User ID")]
         public int UserID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Username is required for registration")]
         [Display(Name = "Username")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A Password is required to register")]
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
