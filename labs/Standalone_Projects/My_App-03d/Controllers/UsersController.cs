@@ -50,7 +50,7 @@ namespace My_App_03d.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "UserID, Username, Password")] User user)
+        public ActionResult Register(User user)
         {
             if(ModelState.IsValid)
             {
