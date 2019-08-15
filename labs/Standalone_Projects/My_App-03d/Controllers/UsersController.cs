@@ -67,11 +67,49 @@ namespace My_App_03d.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login([Bind(Include = "Username, Password")] UserLoginView userLoginView)
+        public ActionResult Login([Bind(Include = "UserName, Password")] UserLoginView userLoginView)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
+                var usr = db.Users.Where(u => u.UserName == userLoginView.UserName).FirstOrDefault();
+                if (usr != null)
+                {
+                    if (usr.Password == userLoginView.Password)
+                    {
+                        var session = new UserSession()
+                        {
+                            UserID = usr.UserID,
+                            UserName = usr.UserName,
 
+                        };
+                        this.Session["ValidateSession"] = session;
+                        return RedirectToAction("LoggedIn");
+                    }
+                    else
+                    {
+                        ViewBag.InvalidPassword = true;
+                        userLoginView.Password = null;
+                        return View(userLoginView);
+                    }
+
+
+                }
+                return RedirectToAction("Login");
+
+            }
+            return View(userLoginView);
+        }
+
+        [HttpGet]
+        public ActionResult LoggedIn()
+        {
+            if (Session["ValidateSession"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
             }
         }
     }
