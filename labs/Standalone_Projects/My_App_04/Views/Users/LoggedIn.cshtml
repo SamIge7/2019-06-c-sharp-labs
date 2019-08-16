@@ -1,25 +1,25 @@
-﻿@model My_App_03d.Models.User
-
+﻿
 @{
-    ViewBag.Title = "Logged In";
+    ViewBag.Title = "LoggedIn";
 }
 
-    <fieldset>
 
-        <legend>
+<fieldset>
 
-            @if (Session["ValidateSession"] != null)
-            {
-                <text>
+    <legend>
 
-                    Welcome! You have successfully logged in!
+        @if (Session["ValidateSession"] != null)
+        {
+            <text>
 
-                </text>
-            }
+                Welcome! You have successfully logged in!
 
-            <a id="log-out button" href='@Url.Action("Login", "Users")' class="btn btn-primary btn-lg">Logout</a>
+            </text>
+        }
 
-        </legend>
+        <a id="log-out button" href='@Url.Action("Login", "Users")' class="btn btn-primary btn-lg">Logout</a>
 
-    </fieldset>
+    </legend>
+
+</fieldset>
 
