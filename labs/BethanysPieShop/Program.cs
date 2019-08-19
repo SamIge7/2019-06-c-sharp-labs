@@ -31,8 +31,9 @@ namespace BethanysPieShop
 
                 }
 
-                host.Run();
+                
             }
+            host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
