@@ -31,5 +31,15 @@ namespace BethanysPieShop.Contollers
             };
             return View(homeViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieByID(id);
+            if (pie == null)
+            {
+                return NotFound();
+            }
+            return View(pie);
+        }
     }
 }
