@@ -1,8 +1,23 @@
-﻿@{
+﻿@model BethanysPieShop.Models.HomeViewModel
+@{ 
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h2>@Model.Title</h2>
+
+    @foreach (var pie in Model.Pies)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@pie.ImageThumbnailUrl" alt=" ">
+                <div class="caption">
+                    <h3 class="pull-right">@pie.Price.ToString("c")</h3>
+                    <h3>
+                        @pie.Name
+                    </h3>
+                    <p>@pie.ShortDescription</p>
+                </div>
+            </div>
+        </div>
+    }
+
