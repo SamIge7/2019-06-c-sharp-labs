@@ -183,8 +183,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "labs_75_array_of_tasks", "l
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs_76b_ASP_Core_Website", "Labs_76b_ASP_Core_Website\Labs_76b_ASP_Core_Website.csproj", "{F48A40B0-0B86-4EAE-A174-00AB426D8454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShop", "BethanysPieShop\BethanysPieShop.csproj", "{79704B53-204E-4BFD-A93B-5C314DAD4EEC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -551,10 +549,6 @@ Global
 		{F48A40B0-0B86-4EAE-A174-00AB426D8454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F48A40B0-0B86-4EAE-A174-00AB426D8454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F48A40B0-0B86-4EAE-A174-00AB426D8454}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79704B53-204E-4BFD-A93B-5C314DAD4EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79704B53-204E-4BFD-A93B-5C314DAD4EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79704B53-204E-4BFD-A93B-5C314DAD4EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79704B53-204E-4BFD-A93B-5C314DAD4EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
